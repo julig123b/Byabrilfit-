@@ -14,15 +14,15 @@ export default function Header() {
   const controls = useAnimation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    controls.start({ height: scrolled ? 'var(--header-height-scrolled)' : 'var(--header-height)' });
+    controls.start({
+      height: scrolled ? 'var(--header-height-scrolled)' : 'var(--header-height)',
+    });
   }, [scrolled, controls]);
 
   return (
@@ -47,7 +47,14 @@ export default function Header() {
       }}
     >
       <Link href="/">
-        <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-primary)' }}>
+        <span
+          style={{
+            fontFamily: 'Playfair Display, serif',
+            fontSize: '1.5rem',
+            fontWeight: 700,
+            color: 'var(--color-primary)',
+          }}
+        >
           ByAbrilFit
         </span>
       </Link>
