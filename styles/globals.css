@@ -1,36 +1,40 @@
-/* Global styles and CSS variables for ByAbrilFit site */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
-  scroll-behavior: smooth;
+:root{
+  --color-background:#0b0b0b;
+  --color-primary:#EBCB73;   /* dorado elegante */
+  --color-secondary:#BFA355;
+  --color-card:#141414;
+  --color-muted:#9a9aa3;
+  --radius:14px;
+  --header-height:80px;
+  --header-height-scrolled:60px;
 }
 
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background:var(--color-background);
+  color:#f5f5f5;
 }
 
-/* CSS variables */
-:root {
-  --color-background: #0b0b0b;
-  --color-primary: #f5d36c; /* golden accent */
-  --color-secondary: #b89e47;
-  --color-card: #181818;
-  --color-muted: #888;
-  --header-height: 80px;
-  --header-height-scrolled: 60px;
-}
+a{color:inherit; text-decoration:none; transition:color .2s}
+a:hover{color:var(--color-primary)}
+img{max-width:100%; display:block}
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s ease;
+.button{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:.5rem; padding:.9rem 1.4rem; border-radius:12px;
+  background:var(--color-primary); color:#111; font-weight:700;
+  box-shadow:0 10px 24px rgba(235,203,115,.15);
+  transition:transform .2s, box-shadow .2s;
 }
-a:hover {
-  color: var(--color-primary);
+.button:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(235,203,115,.25) }
+
+.section{ padding: clamp(3rem, 4vw, 6rem) 2rem; }
+.container{ max-width:1200px; margin:0 auto; }
+
+.card{
+  background:var(--color-card);
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  overflow:hidden;
 }
